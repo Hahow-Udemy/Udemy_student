@@ -1,4 +1,4 @@
-package com.Angus.student
+package com.Angus.Kotlin
 
 fun main(args: Array<String>) {
     var stu = Student("Angus2", 60, 99)
