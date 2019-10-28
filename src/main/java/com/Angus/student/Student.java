@@ -3,7 +3,7 @@ package com.Angus.student;
 public class Student {
     String id, name;
     int english, math;
-
+    static int pass = 60;
     public Student(String name, int english, int math) {
         this.name = name;
         this.english = english;
@@ -11,7 +11,7 @@ public class Student {
     }
 
     public void print(){
-        System.out.println(name + "\t" + english + "\t" + math + "\t" + (english+math)/2);
+        System.out.println(name + "\t" + english + "\t" + math + "\t" + (english+math)/2 + "\t" +((getAverage() >= pass) ? "PASS" : "FAIL"));
     }
 
     public int highest(){

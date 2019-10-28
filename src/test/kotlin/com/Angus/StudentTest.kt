@@ -5,11 +5,14 @@ import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 
 class StudentTest(){
+
+
     @Test
   fun gradingTest(){
         val student = Student("Angus", 80, 60)
         Assertions.assertEquals('C',student.grading())
     }
+
 
     @Test
     fun highestTest(){

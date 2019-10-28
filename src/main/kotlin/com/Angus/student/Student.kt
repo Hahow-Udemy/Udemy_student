@@ -1,19 +1,43 @@
 package com.Angus.Kotlin
 
 fun main(args: Array<String>) {
+    Student.test()
     var stu = Student("Angus2", 60, 99)
     var test =123
+    val gstu = GraduateStudent("Jack", 55, 65, 60)
+    gstu.print()
     stu.print()
     println("Test is : $test")
     println("High score : ${stu.highest()}")
 }
 
-class Student(var name : String, var english : Int, var math : Int){
-    fun print(){
-        println(" $name\t$english\t$math\t${getAverage()}\t${passOrFail()}\t${grading()} ");
+class GraduateStudent(name: String?, english: Int, math: Int,var thesis : Int) : Student(name, english, math){
+    companion object{
+        var pass = 70
     }
 
-    fun passOrFail() = if (getAverage() >= 60)"Pass" else "Failed"
+    override fun print() {
+//        super.print()
+        println(" $name\t$english\t$math\t$thesis\t${getAverage()}\t${passOrFail()}\t${grading()} ")
+    }
+
+    override fun passOrFail(): String {
+//        return super.passOrFail()
+        return if (getAverage() >= pass)"Pass" else "Failed"
+    }
+}
+open class Student(var name : String?, var english : Int, var math : Int){
+    companion object{
+        var pass = 60
+        fun test(){
+            println("testing")
+        }
+    }
+    open fun print(){
+        println(" $name\t$english\t$math\t${getAverage()}\t${passOrFail()}\t${grading()} ")
+    }
+
+    open fun passOrFail() = if (getAverage() >= pass)"Pass" else "Failed"
 
     fun grading() : Char{
         var grading = when(getAverage()){
