@@ -7,6 +7,7 @@ data class Ticket(var orignal : Int, var destination : Int, var price : Int)
 fun main() {
     var ticket = Ticket(20, 48, 420)
     for (i in 1..100)
+        println(ticket)
     println((1..10).random())
 
 //    println((1..10).endInclusive)
