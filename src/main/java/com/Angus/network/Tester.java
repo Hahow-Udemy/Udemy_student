@@ -20,7 +20,7 @@ public class Tester {
             String line = br.readLine();
             StringBuffer json = new StringBuffer();
             while(line != null ){
-//                System.out.println(line);
+                System.out.println(line);
                 json.append(line);
                 line = br.readLine();
             }
